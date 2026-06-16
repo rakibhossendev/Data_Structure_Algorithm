@@ -16,7 +16,24 @@ int binary(int n){
     return ans;
 }
 
+int decimal(int number){
+    int answer = 0;
+    int power = 1;
+
+    while(number > 0){
+        int last_digit = number % 10;
+
+        answer += (last_digit *power);
+        power *= 2;
+
+        number /= 10;
+    }
+
+    return answer;
+
+}
 int main(){
-    int x = binary(6);
-    cout << x;
+    int x = 1100;
+
+    cout << decimal(x) << endl;
 }
